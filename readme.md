@@ -1,0 +1,1 @@
+>> Database store on themes folder named DATABASE.
