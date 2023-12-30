@@ -1,0 +1,58 @@
+.additional_information_wrapper {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.additional_information_wrapper .productSizeWrapper.forToggle {
+	border: 2px solid #f1f1f1;
+	margin-bottom: 12px;	
+	padding: 7px 15px;
+	display: inline-block;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.additional_information_wrapper .extraToppingWrapper.forToggle {
+	max-height: 208px;
+	overflow: auto;
+	width: 100%;
+	border: 2px solid #f1f1f1;
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+.additional_information_wrapper .title {
+	display: inline-block;
+	clear: both;
+	width: 100%;
+}
+
+.additional_information_wrapper ul li {
+	width: 49.5%;
+	float: left;
+	background: #f1f1f1;
+	padding: 10px 6px;
+	margin-bottom: 6px;
+	line-height: 0;
+	border-radius: 9px;
+	border-right: 5px solid #fff;
+}
+
+@media (max-width:1280px) {
+	.additional_information_wrapper ul li {
+		width: 100%;
+		float: inherit;
+	}
+}
+
+.additional_information_wrapper input[type="checkbox"],
+.additional_information_wrapper input[type="radio"] {
+	margin-right: 4px;
+}
+
+
+
+
+
+

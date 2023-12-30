@@ -1,0 +1,806 @@
+/* menu ==========*/
+
+.MenuDD{
+  background:#313131;
+  display:flex;
+  position: relative;
+
+}
+.MenuDD.dark , .MenuDD.dark a{
+  text-decoration: none;
+}
+.MenuDD ul , .MenuDD li{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+
+.MenuDD label.opener::after {
+  content: '+';
+  position: absolute;
+  color: white;
+  top: 2px;
+  right: 7px;
+}
+
+.MenuDD input[type="checkbox"]:checked ~ label.opener::after {
+  content: '-';
+  position: absolute;
+  color: white;
+  top: 0px;
+  right: 8px;
+}
+
+
+.MenuDD .sp_drop {
+  display: none;
+}
+
+.MenuDD label.opener {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #CCC;
+  top: 10px;
+  right: 11px;
+  display: none;
+  cursor: pointer;
+}
+
+.MenuDD .realtive-m {
+  position: relative;
+}
+
+/* ------ first level ============================ */
+
+
+.DDMenu > li.hasChild::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid white;
+  position: absolute;
+  top: 21px;
+  right: 6px;
+}
+
+.DDMenu > li{
+  float: left;
+  border-right: 1px solid #424141;
+}
+
+.DDMenu > li > a {
+  padding: 14px 20px 14px 7px;
+  font-size: 12px;
+  font-family: Arial;
+  font-weight: bold;
+  border-right: 1px solid #141414;
+  display: block;
+  color: white;
+}
+
+.DDMenu.box-mega{
+  position: relative;
+
+}
+
+/* ------ End of first level ============================ */
+/* second level ------ */
+
+.MenuDD .mega {
+  position: absolute;
+  left: 0;
+  min-width: 200px;
+  min-height: 100px;
+  background-color: white;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  width: 100%;
+}
+
+.DDMenu > li > ul li.hasChild::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid #838080;
+  position: absolute;
+  top: 13px;
+  right: 6px;
+  transform: rotate(-90deg);
+}
+
+
+.DDMenu  a.hasChild::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid white;
+    position: absolute;
+    top: 21px;
+    right: 6px;
+}
+
+
+.MenuDD ul > li > ul > li > a {
+  color: #333333;
+  font-size: 12px;
+  font-family: Arial;
+  font-weight: bold;
+  display: block;
+  white-space: nowrap;
+  padding: 10px 12px;
+  min-width: 200px;
+}
+
+.MenuDD ul > li > ul > li:hover{
+  background: #333333;
+}
+
+.MenuDD ul > li > ul > li:hover > a{
+  color: white;
+}
+.MenuDD ul > li > ul {
+  position: absolute;
+  background-color: white;
+  left: 0;
+  white-space: nowrap;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  transition: all 0.3s ease-in 0s;
+}
+
+.MenuDD ul > li > ul.reverse{
+  right: 0;
+  left: auto;
+}
+
+
+@media(min-width: 768px) {
+  .MenuDD ul > li:hover > ul, .MenuDD ul > li:hover > .mega {
+    opacity: 1;
+    /* top: 46px; */
+    z-index: 9;
+    visibility: visible;
+  }
+
+  .DDMenu.box-mega{
+    padding-left: 0;
+    margin-left: -15px;
+  }
+}
+/* end  of second level */
+
+/* third level ----*/
+
+.MenuDD ul > li > ul li ul {
+  position: absolute;
+  background-color: white;
+  left: 100%;
+  top:0;
+  white-space: nowrap;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  transition: all 0.3s ease-in 0s;
+}
+
+.MenuDD ul > li > ul li ul.reverse{
+  right: 100%;
+  left: auto;
+}
+
+/* end of third level */
+
+
+@media(max-width: 768px){
+
+  .MenuDD .hasChild::before {
+    display: none;
+  }
+  .MenuDD .full-w-mega{
+    position: relative;
+  }
+  .MenuDD .container{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .MenuDD  ul > li {
+    float: none;
+    border-bottom:1px solid #424141;
+    border-right: none;
+  }
+  .MenuDD  li > a {
+    border-bottom: 1px solid #141414;
+    border-right: none;
+  }
+
+  .MenuDD ul > li > ul > li{
+    border: none;
+  }
+
+  .MenuDD ul > li > ul > li label.opener{
+    top:5px;
+  }
+
+  .MenuDD ul > li > ul > li label.opener:after{
+    color: #333;
+  }
+  .MenuDD ul > li > ul input[type="checkbox"]:checked ~ label.opener::after{
+    color: #333;
+  }
+  .MenuDD ul > li > ul > li:hover > label.opener:after , .MenuDD ul > li > ul li:hover > input[type="checkbox"]:checked ~ label.opener::after {
+    color: white;
+  }
+  .MenuDD ul > li > ul > li > a{
+    border-color: #d3d3d3;
+    padding-left: 30px;
+  }
+
+  .MenuDD ul > li > ul > li > ul > li > a{
+    border-color: #d3d3d3;
+    padding-left: 60px;
+    color: #6e6a6a;
+  }
+
+  .MenuDD ul > li > ul > li > ul > li > ul > li > a {
+    padding-left: 90px;
+    color: #7d7878;
+  }
+
+  .MenuDD ul{
+    position: static;
+  }
+
+  .MenuDD  input[type=checkbox]:checked ~ ul{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    max-height: 10000PX;
+    box-shadow: none;
+  }
+  .MenuDD  input[type=checkbox]:checked ~ div.mega{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+    min-height: 100px;
+    box-shadow: none;
+  }
+  .MenuDD label.opener{
+    display: block;
+  }
+}
+
+
+
+.tab-menu{
+    width: 100%;
+    position: relative;
+}
+
+.tab-menu li a{
+    padding: 10px 12px;
+    color: #333333;
+    display: block;
+    width: 250px;
+    border-bottom: 1px solid #d0d0d0;
+}
+.tab-menu li:last-child a{
+    border: none;
+}
+@media(min-width: 768px) {
+
+    .tab-menu > li:hover{
+        background: #525252;
+    }
+  .tab-menu > li:hover >a {
+    color: white;
+  }
+
+  .tab-body .row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+    .tab-body {
+        display: none;
+        width: calc(100% - 250px);
+        position: absolute;
+        margin-left: 250px;
+        top: 0;
+        height: 100%;
+         z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        background: white;
+    }
+  li.mega-tab:hover .tab-body.default {
+        display: block;
+        z-index: 1;
+        visibility: visible;
+        opacity: 1;
+    }
+
+  .tab-menu li.default > a{
+    background: #525252;
+    color: white;
+  }
+
+  li.mega-tab .tab-menu:hover .default.tab-body{
+    display: none;
+  }
+
+  .tab-menu:hover li.default > a{
+    background: white;
+    color: #525252;
+  }
+
+  .tab-menu li.default:hover >a {
+    background: #525252;
+    color: white;
+  }
+
+    .tab-menu li:hover .tab-body {
+        display: block;
+        z-index: 3;
+        visibility: visible;
+        opacity: 1;
+        overflow: hidden;
+    }
+
+  .tab-menu li.default:hover .default.tab-body{
+    display: block;
+  }
+
+
+  .tab-body .row{
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  }
+}
+
+@media(max-width: 768px){
+  .MenuDD .tab-menu > li{
+        position: relative;
+        width: 100%;
+        border-bottom: 1px solid #C0C0C0;
+       background: #ebebeb;
+    }
+  .MenuDD .tab-menu li a{
+        width: 100%;
+        border: none;
+    }
+    .tab-menu li label.opener:after{
+        color: #333333;
+    }
+    .tab-menu  input[type="checkbox"]:checked ~ label.opener::after{
+        color: #333333;
+    }
+    .tab-body {
+        width:100%;
+        min-height: 100px;
+        background: white;
+        visibility: hidden;
+        z-index: -1;
+        opacity: 0;
+        position: absolute;
+    }
+    .tab-menu input[type=checkbox]:checked ~.tab-body{
+        position: static;
+        visibility: visible;
+        z-index: 1;
+        opacity: 1;
+    }
+}
+
+.tab-body .row{
+  background: white;
+  padding-bottom: 50px;
+}
+
+.tab-body .row h3{
+    margin: 10px 5px;
+}
+
+.tab-body .row a{
+  width: auto;
+  padding: 7px 5px;
+  border: none;
+}
+
+.tab-body .row a:hover{
+  background: none;
+  text-decoration: underline;
+  color: #333333;
+
+}
+
+.tab-body .row li{
+  border: none;
+}
+
+.tab-menu {
+  width: 100%;
+  position: relative;
+}
+@media(min-width: 768px){
+  .tabulas ,.tab-body{
+    min-height: 221px;
+  }
+
+}
+/* ---------------- MenuVs ------------------------------- */
+
+
+.menuVS .MenuHead {
+  width: 100%;
+  position: relative;
+  color: #3b3b3b;
+  cursor: pointer;
+  min-height: 40px;
+  box-sizing: border-box;
+  font-size: 15px;
+  background: linear-gradient(to bottom,#f8da4d 0,#f2b922 100%);
+  font-weight: bold;
+  font-family: arial;
+}
+
+.menuVS .MenuHead span{
+  padding: 12px 20px;
+  display: block;
+}
+
+
+.menuVS .MenuBody li{
+  border-bottom: 1px solid #EAEAEA;
+}
+.menuVS .MenuBody li a , .menuVS .MenuBody > li > ul > li > a{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 10px 8px;
+  color: #333333;
+  font-size: 12px;
+}
+
+.menuVS .MenuBody ul{
+  position: relative;
+}
+
+.menuVS .MenuBody li:hover , .menuVS .MenuBody > li > ul > li:hover > a {
+  color: #333333;
+  background: #F2F1F1;
+}
+
+
+@media(min-width: 768px) {
+  .menuVS .MenuBody {
+    position: absolute;
+    background:white;
+    width: 100%;
+    min-height: 100px;
+    left: 0;
+    box-shadow: 2px 1px 6px 0px rgba(50, 50, 50, .25);
+    top: 100%;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s;
+
+  }
+
+  .menuVS .mega{
+    color: #333333;
+  }
+  .menuVS .mega ul{
+    position: static;
+    z-index: 1;
+    visibility: visible;
+    opacity: 1;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .menuVS .mega h3{
+    padding: 10px;
+    margin: 0;
+    font-size: 15px;
+    padding-bottom: 0;
+  }
+  .menuVS .mega ul li{
+    border: none;
+  }
+
+
+
+  .menuVS .MenuHead:hover .MenuBody {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .menuVS .MenuBody.active {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .menuVS .MenuBody > li > ul{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 300px;
+    min-height: 323px;
+  }
+
+  .menuVS .MenuBody .mega{
+    min-height: 400px;
+    left: 100%;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+
+  .MenuBody > li > ul > li:hover .mega{
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .menuVS .MenuBody .mega.single{
+    min-width: 250px;
+  }
+
+  .menuVS .MenuBody .mega.double{
+    min-width: 500px;
+  }
+  .menuVS a{
+    position: relative;
+  }
+  .menuVS .hasChild:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #686565;
+    position: absolute;
+    top: 17px;
+    right: 6px;
+    transform: rotate(-90deg);
+  }
+
+
+}
+
+
+
+@media(max-width: 768px){
+
+  .menuVS .MenuBody {
+    width: 100%;
+    background: white;
+    position: static;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  .menuVS .MenuBody > li > a{
+    padding: 13px 8px;
+
+  }
+
+  .menuVS  .MenuHead  label.opener {
+    border-color: #333333;
+
+  }
+  .menuVS  .MenuHead  label.opener:after {
+    color: #333333;
+  }
+
+  .menuVS  .MenuHead  input[type="checkbox"]:checked ~ label.opener::after{
+    color: black;
+  }
+
+  .menuVS  input[type=checkbox]:checked ~ ul{
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    min-height: 100px;
+    background: white;
+    transition: none;
+  }
+
+  .menuVS .MenuBody  li{
+    position: relative;
+  }
+
+  .menuVS .MenuBody  li ul{
+    width: 100%;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    height: 0;
+    transition: none;
+  }
+
+  .menuVS .MenuBody > li > ul > li > a{
+    padding-left: 50px;
+    background: #F7F7F7CC;
+  }
+
+  .menuVS ul > li > ul > li:hover > label.opener::after,   .menuVS ul > li > ul li:hover > input[type="checkbox"]:checked ~ label.opener::after {
+    color: black;
+  }
+
+  .menuVS .MenuBody .mega ul{
+    visibility: visible;
+    z-index:1 ;
+    opacity: 1;
+    left: 0;
+    position: static;
+    height: auto;
+    box-shadow: none;
+    padding-left: 40px;
+    padding-bottom: 20px;
+  }
+
+  .menuVS .MenuBody .mega ul li{
+      border-bottom: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+/*============================================================================*/
+/*============================================================================*/
+/* My Customization ==============================================*/
+/*============================================================================*/
+/*============================================================================*/
+
+/*jeneral kaj ========================*/
+.DDMenu > li > a {
+  border-right: none;
+  font-size: 18px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: normal;
+}
+
+.MenuDD ul > li > ul > li > a {
+  font-family: 'Barlow', sans-serif;
+  color: #393e46;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: normal;
+}
+
+.DDMenu > li {
+  border-right: none;
+}
+
+.DDMenu a.hasChild::before,
+.DDMenu > li.hasChild::before {
+  top: 24px;
+}
+
+#allMenuPart {
+  line-height: 21px;
+  font-size: 14px;
+}
+
+/*mega menu er main menu hover kolte j mul mega menu open hoy tar height
+ o mega menu main er height soman korar jonno*/
+.tab-body .row {
+  padding-bottom: 15px;
+  padding-top: 10px;
+  height: 100%;
+}
+
+/*mega menu er main menu te icon and text pasapasi nia asar jonno*/
+.megaFlexColumn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*mega menu er main menu icon size thik kora*/
+.megaFlexColumnImg {
+  width: 50px;
+  height: 30px;
+  padding: 0px 10px;
+}
+
+/*mega menu er main menu en niche icon soho border*/
+li.megaFlexColumn a {
+  border: none !important;
+}
+
+li.megaFlexColumn {
+  border-bottom: 1px solid #d0d0d0;
+  padding-left: 7px;
+}
+
+.tab-menu li a {
+  border-bottom: none;
+}
+
+/*
+Mega menu er main manu te icon add korar por hover er somoy color change korar jonno ai css lagbe.
+*/
+
+.tab-menu li .megaFlexColumn a {
+  padding: 10px 0px;
+}
+
+@media(min-width: 768px) {
+  .tab-menu li.default {
+    background: #525252;
+  }
+  .tab-menu li.default .megaFlexColumn a {
+    color: white;
+  }
+}
+
+.tab-menu:hover li.default {
+  background: white;
+  color: #525252;
+}
+.tab-menu:hover li.default .megaFlexColumn a {
+  color: #525252;
+}
+
+@media(min-width: 768px) {
+  .tab-menu li:hover .megaFlexColumn a {
+    color: white;
+  }
+}
+
+@media(min-width: 768px) {
+  .tab-menu li.default:hover {
+    background: #525252;
+    color: white;
+  }
+  .tab-menu li.default:hover .megaFlexColumn a {
+    color: white;
+  } 
+}
+
+/*mega menu main menu er width barano, komano er jonno nicher css babohar hobe.*/
+@media(min-width: 768px) {
+  .tab-body {
+    width: calc(100% - 300px);
+    position: absolute;
+    margin-left: 300px;
+  }
+}

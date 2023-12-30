@@ -1,0 +1,34 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+ .pi-msg-container{
+    display:block;
+    width:100%;
+    clear:both;
+    margin:20px auto;
+    padding:10px 0;
+    
+}
+
+.pi-msg-title{
+    padding:10px;
+    font-size: 16px;
+    border:1px solid #ccc;
+}
+
+.pi-msg-body{
+   padding:10px;
+   border:1px solid #ccc;
+}
+
+.pi-free-prod-row{
+    display: flex;
+    width:100%;
+}
+
+.pi-free-prod-img{
+    width:60px;
+    margin-right:20px;
+}

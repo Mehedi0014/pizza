@@ -1,0 +1,43 @@
+.gctlSubscribeInput {
+	width: 100%;
+	min-height: 3.938em;
+	padding-left: 1.875em;
+	border: none;
+	padding: .473em 1.2em;
+	padding-left: 1.2em;
+	color: #666;
+	outline: 0;
+	border: 1px solid #ccc;
+	-webkit-appearance: none;
+	box-sizing: border-box;
+	font-weight: 300;
+	border-radius: 50px;
+}
+
+.ct_btnTwo {
+	color: #fff;
+	background-color: #ca0808;
+	font-weight: 400;
+	border-radius: 50px;
+	height: 26px;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+button.gctlSubscribebutton {
+	padding: 21px 38px;
+	position: absolute;
+	top: 50%;
+	right: 7px;
+	transform: translate(0,-51%);
+	line-height: 0px;
+	font-size: 19px;
+}
+
+@media (max-width: 991px) {
+	button.gctlSubscribebutton {
+		position: unset;
+		transform: translate(0,0);
+		margin-top: 10px;
+	}
+}

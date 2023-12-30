@@ -1,0 +1,1077 @@
+/*!
+Theme Name: mOne
+Theme URI: http://underscores.me/
+Author: Md. Mehedi Hassan
+Author URI: https://www.facebook.com/mehedi0013/
+Description: Make your life easy
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: mone
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+mOne is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+
+/*
+==============================================================================
+	Global Section
+==============================================================================
+*/
+html,
+body {
+	font-family: 'Merriweather Sans', sans-serif;
+	padding: 0;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 1.96em;
+}
+
+.font-weight-semibold {
+    font-weight: 600 !important;
+}
+
+.faColor1 {
+    color: 
+    #4fc143;
+    font-weight: 600;
+    padding-right: 5px;
+}
+
+.btn.focus, .btn:focus {
+	outline: 0;
+	box-shadow: none;
+}
+
+a {  
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #dd1d3e !important;
+}
+
+body h3 {
+	padding: 0;
+}
+
+/*Apply this class in ul tag for removing padding and list-style */
+.listDecoration {
+    padding-left: 0;
+    list-style: none;
+}
+
+/* Color style start */
+.ct_colorOne {
+	color: #fbcd4e; /* Like Yellow*/
+}
+
+.ct-colorTwo {
+	color: #862D2F;
+}
+/* Color style end */
+
+
+/* Background Color style start */
+.ct_bgColorOne {
+	background-color: #f7f7f7;
+}
+
+.ct-bgColorTwo {
+	background-color: #862D2F;
+}
+
+.ct_bgColorThree {
+	background-color: #e9e9e9;
+}
+/* Background Color style end */
+
+
+/* Button style start */
+.ct_btnOne {
+	color: #fff;
+	background-color: #862D2F;
+	border: 2px solid #862D2F;
+	font-weight: 300;
+	padding: 8px 12px;
+	border-radius: 50px;
+}
+
+.ct_btnOne:hover,
+.ct_btnOne:focus,
+.ct_btnOne:active {
+	background-color: #fff;
+	color: #862D2F;
+	animation-duration: 0.45s;
+	animation-iteration-count: 1;
+	animation-name: singleHeartBeat;
+	animation-timing-function: linear
+}
+
+@keyframes singleHeartBeat {
+	50% {
+		transform: scale(0.85);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.ct_btnTwo {
+	color: #fff;
+	background-color: #862D2F;
+	font-weight: 400;
+	border-radius: 50px;
+	height: 26px;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.ct_btnTwo:hover {
+	color: #fff;
+	background: #333;
+}
+
+.ct_btnFour {
+	position: relative;
+	display: inline-block;
+	font-size: 15px;
+	line-height: 30px;
+	color: #242424;
+	font-weight: 600;
+	letter-spacing: 4px;
+	background-color: #eec300;
+	text-transform: uppercase;
+	font-family: Poppins, sans-serif;
+	padding: 15px 52px;
+	overflow: hidden;
+	border-radius: 3px;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.ct_btnFour::before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	background-color: #ffffff;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	-webkit-transform: scale(0.5, 1);
+	transform: scale(0.5, 1);
+}
+
+.ct_btnFour .txt {
+	position: relative;
+	z-index: 1;
+}
+
+.ct_btnFour:hover {
+	color: #242424;
+}
+
+.ct_btnFour:hover::before {
+	opacity: 1;
+	-webkit-transform: scale(1, 1);
+	transform: scale(1, 1);
+}
+/* Button style end */
+
+.ct_mb_5p1{
+	margin-bottom: 2rem;
+}
+
+.ct_mb_5p7{
+	margin-bottom: 4rem;
+}
+
+ins {
+	text-decoration: none;
+	margin-left: 8px;
+}
+
+/*
+==============================================================================
+	Topbar Section
+==============================================================================
+*/
+/* Menu ======================================= */
+
+.bgForHeaderOne {
+	background: rgb(228,90,93);
+	background: linear-gradient(90deg, rgba(167,68,70,1) 0%, rgba(75,25,26,1) 100%);
+}
+
+.bgForHeaderTwo {
+	background: rgb(228,90,93);
+	background: linear-gradient(90deg, rgba(75,25,26,1) 0%, rgba(167,68,70,1) 100%);
+}
+
+@media (max-width: 991px) {
+	.bgForHeaderOne {
+		display: flex;
+		align-content: flex-start !important;
+	}
+}
+
+#site-navigation {
+	margin-top: 70px;
+	margin-right: 30px;
+}
+
+#mega-menu-wrap-menu-1,
+#mega-menu-wrap-menu-2,
+#mega-menu-wrap-menu-4 {
+	background: transparent;
+}
+
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, 
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link,
+
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, 
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link,
+
+#mega-menu-wrap-menu-4 #mega-menu-menu-4 > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
+#mega-menu-wrap-menu-4 #mega-menu-menu-4 > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, 
+#mega-menu-wrap-menu-4 #mega-menu-menu-4 > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {
+	background: transparent;
+}
+
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item > a.mega-menu-link:hover,
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 > li.mega-menu-item > a.mega-menu-link:hover,
+#mega-menu-wrap-menu-4 #mega-menu-menu-4 > li.mega-menu-item > a.mega-menu-link:hover {
+	background: transparent;
+}
+
+/* "Book a table" menu - button desing ============================================== */
+
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 li.mega-menu-item.ct_btnOne {
+	color: #fff;
+	background-color: #862D2F;
+	border: 2px solid #862D2F;
+	font-weight: 300;
+	padding: 0px 0px;
+	border-radius: 50px;
+}
+
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 li.mega-menu-item.ct_btnOne a {
+	font-size: 11px;
+	text-transform: uppercase;	
+}
+
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 li.mega-menu-item.ct_btnOne a:hover {
+	color: #fff;
+}
+
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 li.mega-menu-item.ct_btnOne:hover,
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 li.mega-menu-item.ct_btnOne:focus,
+#mega-menu-wrap-menu-2 #mega-menu-menu-2 li.mega-menu-item.ct_btnOne:active {
+	background-color: transparent;
+	color: #862D2F;
+	animation-duration: 0.45s;
+	animation-iteration-count: 1;
+	animation-name: singleHeartBeat;
+	animation-timing-function: linear
+}
+
+/* Add to cart icon desing ============================================== */
+.rightMenu .cartItems {
+	position: relative;
+	width: 55px;
+}
+
+.rightMenu .cartItems .fa {
+	font-size: 24px;
+}
+
+.rightMenu .cartItems .topMenuCartItemsShow {
+	position: absolute;
+	top: -22px;
+	right: 3px;
+	font-size: 12px;
+	line-height: 18px;
+	background: #862d2f;
+	border-radius: 50px;
+	border: 2px solid #fac122;
+	height: 23px;
+	width: 23px;
+	text-align: center;
+}
+
+.rightMenu .cartItems > a {
+	color: #fff;
+}
+
+/*=============================================*/
+
+#navbarPackeg .rightMenu {
+	color: #fff;
+	margin-top: 70px;
+	margin-left: 30px;
+	z-index: 999999;
+}
+
+.navLogo {
+	z-index: 999999;
+}
+
+/* Header wrappr background image ======================================= */
+
+#masthead {
+	position: absolute;
+	z-index: 9;
+	-webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;    
+}
+
+.mastheadfixed {
+	position: fixed !important;
+	top: 0;
+	width: 100%;
+	background: rgba(134, 45, 47, 1);
+	z-index: 9999999;
+	opacity: .9;
+}
+
+
+/* Mobile Menu Section ======================================= */
+#mobileMenu #mega-menu-wrap-menu-3 .mega-menu-toggle {
+	background-color: transparent;
+}
+
+#mobileMenu #mega-menu-wrap-menu-3 .mega-menu-toggle.mega-menu-open {
+	background-color: #fac122;
+}
+
+#mobileMenu #mega-menu-wrap-menu-3 .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner,
+#mobileMenu #mega-menu-wrap-menu-3 .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner::before,
+#mobileMenu #mega-menu-wrap-menu-3 .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner::after {
+	background-color: #000;
+}
+
+#mobileMenu #mega-menu-wrap-menu-3 {
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+
+/*
+==============================================================================
+	Home page banner carousel Section
+==============================================================================
+*/
+
+body.home.page-template-front-page.page-template-front-page-php div.headerWrapperBgImg {
+	display: none;
+}
+
+/*
+==============================================================================
+	Home page after banner Section
+==============================================================================
+*/
+
+#homePageAfterBanner {
+	padding-top: 6.8em;
+	padding-bottom: 5em;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+
+/*
+==============================================================================
+	Home page Rewarded
+==============================================================================
+*/
+/*#rewarded {
+	padding-top: 6.8em;
+	padding-bottom: 5em;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+#rewarded .rewardedCol {	
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#rewarded .ct_btnTwo {
+	padding: 16px 20px;
+	line-height: 0;
+}
+
+#rewarded {
+	font-size: 18px;
+	color: #000;
+	line-height: 31px;
+}
+
+#rewarded h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #4a903c;
+    font-size: 41px;
+}*/
+
+/*
+==============================================================================
+	Home page Special Offer
+==============================================================================
+*/
+#specialOffer {
+	padding-top: 50px;
+	padding-bottom: 60px;
+}
+
+#specialOffer h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    font-size: 41px;
+}
+
+.owl-nav {
+	text-align: center;
+	padding-top: 30px;
+}
+
+#specialOffer .owl-nav .owl-prev .fa.fa-arrow-left,
+#specialOffer .owl-nav .owl-next .fa.fa-arrow-right {
+	border: 1px solid #ddd;
+	padding: 12px;
+	border-radius: 70px;
+	color: #fff; 
+}
+
+#specialOffer .owl-nav .owl-prev {
+	margin-right: 8px;
+}
+
+/*
+==============================================================================
+	Home page Best Selling Pizzas
+==============================================================================
+*/
+
+#bestsellingPizzas {
+	padding: 5em 0 5.4em;
+}
+
+#bestsellingPizzas .headerHeading .h1 {
+	letter-spacing: 2px;
+}
+
+#bestsellingPizzas .footerLinks a {
+	color: #fff;
+	background-color: #862D2F;
+	padding: 7px 22px;
+	border-radius: 50px;
+	font-weight: bold;
+}
+
+#bestsellingPizzas .footerLinks a:hover {
+    color: #fff;
+    background: #333;
+}
+
+#bestsellingPizzas .footerLinksPrice {
+	font-size: 20px;
+	font-weight: bold;
+	color: #862d2f;
+	margin-bottom: 14px;
+}
+
+#bestsellingPizzas .imgArea {
+	border: 1px solid #f1f1f1;
+	border-radius: 6px;
+}
+
+@media (min-width: 768px){
+	#bestsellingPizzas .imgArea img {
+		height: 200px;
+	}
+}
+
+#bestsellingPizzas .titleAndShortDesc {
+	padding-right: 25px;
+	padding-left: 25px;
+}
+
+#bestsellingPizzas .titleAndShortDesc > h5 {
+	height: 40px;
+}
+
+#bestsellingPizzas .titleAndShortDesc article{
+	color: #666;
+	height: 140px;
+	overflow: hidden;
+}
+
+#bestsellingPizzas .size {
+	color: #888;
+}
+
+#bestsellingPizzas .heardShape {
+	bottom: 15px;
+	right: 15px;
+	font-weight: 600;
+}
+
+#bestsellingPizzas .heardShape:hover {
+	color: #973B3D;
+}
+
+/*
+============================================================================
+ Home Page Our Items section with carousel Design
+============================================================================
+*/
+
+#ourItems {
+	padding-top: 50px;
+	padding-bottom: 60px;
+}
+
+#ourItems h1 {
+	font-family: 'Dancing Script', cursive;
+	color: #fff;
+	font-size: 41px;
+}
+
+#ourItems .product-box {
+	padding: 1px 1px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0px 0px 5px -3px;
+	transition: .3s;
+	margin-bottom: 30px;
+	margin-top: 25px;
+	position: relative;
+}
+
+#ourItems .portuct-title {
+	font-size: 20px;
+	padding: 3px 0;
+	background: #862D2F;
+	color: #fff;
+}
+
+#ourItems .portuct-title:hover {
+	color: #fff !important;
+}
+
+#ourItems .product-btn:hover {
+	background: #fff;
+}
+
+#ourItems .owl-nav {
+	text-align: center;
+	padding-top: 30px;
+}
+
+#ourItems .owl-nav .owl-prev {
+	margin-right: 8px;
+}
+
+#ourItems .owl-nav .owl-prev .fa.fa-arrow-left, 
+#ourItems .owl-nav .owl-next .fa.fa-arrow-right {
+	border: 1px solid #ddd;
+	padding: 12px;
+	border-radius: 70px;
+	color: #fff;
+}
+
+/*
+=====================================================================
+Home page Thirty Minute Delevary Section
+=====================================================================
+*/
+#thirtyMinuteDelevary {
+	position: relative;
+	color: #fff;
+}
+
+#thirtyMinuteDelevary .thirtyMinuteSidebarImg {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#thirtyMinuteDelevary .contentPart{
+	z-index: 8;
+}
+
+#thirtyMinuteDelevary .contentPart .h1 {
+	font-size: 58px;
+}
+
+#thirtyMinuteDelevary .contentPart p {
+	font-size: 18px;
+}
+
+/*
+=====================================================================
+Home page Email Subscription part
+=====================================================================
+*/
+
+#subscribeSection {
+	height: 432px;
+	background-size: cover;
+	background-position: center center;
+}
+
+#subscribeSection .title {
+	font-size: 3.2em;
+	font-weight: bold;
+}
+
+#subscribeSection .marketingText {
+	font-size: 1.3em;
+	margin-bottom: 2.5em;
+	color: #666;
+}
+
+/*
+=====================================================================
+Home page Three Banner
+=====================================================================
+*/
+
+/*
+#threeBanner {
+	background: #f7f2e2;
+	padding: 90px 0;
+}
+
+#threeBanner .allWrapper {
+	height: 100%;
+	background: #fff;
+	padding: 30px 0 208px 20px;
+}
+
+#threeBanner .col-md-4:nth-child(2) .allWrapper {
+	background: #973B3D;
+	color: #fff;
+}
+
+#threeBanner .contentPart {
+	float: left;
+	width: 50%;
+	height: 100%;
+	padding: 15px 32px 10px 10px;
+}
+
+#threeBanner .contentPart .h4 {
+	font-size: 1.8rem;
+	font-weight: bold;
+	line-height: 32px;
+}
+
+#threeBanner .contentPart .text {
+	text-transform: uppercase !important;
+	line-height: 19px;
+	color: #000000;
+}
+
+#threeBanner .col-md-4:nth-child(2) .contentPart .text {
+	color: #fff;
+}
+
+#threeBanner .contentPart .price {
+	font-size: 20px;
+	font-weight: bold;
+	color: #a41a13;
+}
+
+#threeBanner .col-md-4:nth-child(2) .contentPart .price {
+	color: #ffc222;
+}
+
+#threeBanner .col-md-4:nth-child(3) .contentPart .contact {
+	margin-top: 30px;
+}
+
+#threeBanner .col-md-4:nth-child(3) .contentPart .contact a {
+	color: #a41a13;
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+#threeBanner .imagePart {
+	width: 50%;
+	float: right;
+	height: 100%;
+}
+
+#threeBanner .imagePart .imageWrapper img:last-child  {
+	position: absolute;
+	left: -28px;
+	top: 10px;
+}
+*/
+
+#twoBanner {
+    background: #f7f2e2;
+    padding: 90px 0;
+}
+
+/*
+=====================================================================
+Footer
+=====================================================================
+*/
+#mainFooter {
+	color: #fbfbfb;
+	background-image: url('assets/img/footerBgImg.png');
+	position: relative;
+	background-color: #8C3739;
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+
+#mainFooter::before {
+	position: absolute;
+	content: "";
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: rgba(149, 62, 62, 0.85);
+}
+
+#mainFooter a {
+  color: #fbfbfb;
+}
+
+#mainFooter .footerWidget h5 {
+	position: relative;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	color: #fff;
+}
+
+#mainFooter .OfficeAddress .h2 {
+	color: #fff;
+}
+
+#mainFooter .footerWidget h5::before {
+	position: absolute;
+	content: "";
+	left: 0px;
+	bottom: 0px;
+	height: 2px;
+	width: 44px;
+	background-color: #862D2F;
+}
+
+
+.MainPart {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.QuickLink li {
+  width: calc(100% - 105px);
+  float: left;
+  padding-bottom: 5px;
+}
+
+.QuickLink ul li:nth-child(2n) {
+	width: 105px;
+}
+
+.subFooter {
+	border-top: 1px solid rgba(255, 255, 255, 0.7);
+	padding: 30px 0px 0 0;
+	font-size: 16px;
+}
+
+@media (max-width: 425px) {
+  #mainFooter .socialMedia li {
+    padding: 0 5px;
+  }
+}
+
+
+
+/*
+============================================================================
+ Google Map
+============================================================================
+*/
+
+
+#google_map {
+    display: none;
+    background-color: #0f1924;
+}
+
+#googleMap {
+	background-color: #973B3D;
+}
+
+.buttonPart {
+	text-align: center;
+}
+
+.googleMapToggleBtn {
+	color: #fff;
+	padding: 13px 40px;
+	font-weight: bold;
+	border-radius: 18px 18px 0 0;
+}
+
+/*
+============================================================================
+ Learn More About Us Page Design
+============================================================================
+*/
+#learnMoreAboutUsPageWrapper #MeetOurAmazingChefs,
+#learnMoreAboutUsPageWrapper #whyPeopleChooseUs,
+#learnMoreAboutUsPageWrapper .titleHeading {
+	font-family: 'Dancing Script', cursive;
+}
+
+#learnMoreAboutUsPageWrapper #textInfoPart .title {
+    font-size: 2.5em;
+	font-weight: bold;
+	line-height: 1.3em;
+}
+
+#learnMoreAboutUsPageWrapper #textInfoPart .icon {
+	color: #973B3D;
+	font-size: 45px;
+	margin-bottom: 16px;
+}
+
+#learnMoreAboutUsPageWrapper #textInfoPart .heading {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#learnMoreAboutUsPageWrapper #textInfoPart .content {
+	color: #666;
+	font-size: 15px;
+	margin-top: 15px;
+}
+
+/*
+===========================================================================
+ Contact Us Page Design
+============================================================================
+*/
+
+
+#contactUsPageWrapper #textInfoPart .title,
+#contactUsPageWrapper #mapAndForm  .title{
+	font-size: 2.5em;
+	font-weight: bold;
+	line-height: 1.3em;
+}
+
+#contactUsPageWrapper #textInfoPart .textArea
+#contactUsPageWrapper #mapAndForm .textArea {
+	color: #666;
+	font-size: 16px;
+}
+
+#contactUsPageWrapper #textInfoPart .icon {
+	color: #973B3D;
+	font-size: 45px;
+	margin-bottom: 16px;
+}
+
+#contactUsPageWrapper #textInfoPart .heading {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#contactUsPageWrapper #textInfoPart .content {
+	color: #666;
+	font-size: 15px;
+	margin-top: 15px;
+}
+
+/* Contact form design */
+
+#contact_form .custom_form input,
+#contact_form .custom_form textarea {
+    font-size: 15px;
+	margin-bottom: 15px;
+	min-height: 40px;
+	padding: 5px 14px;
+	border: 1px solid #ddd;
+	width: 100%;
+	border-radius: 10px;
+	color: #666;
+	outline: none;
+}
+
+#contact_form .custom_form input.submit {
+	width: auto;
+	color: #fff;
+	border: none;
+}
+
+
+/*
+============================================================================
+ 404 page design
+============================================================================
+*/
+
+#wrongPage {
+  position: relative;
+  height: 100vh;
+}
+
+#wrongPage .wrongPage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.wrongPage {
+  max-width: 410px;
+  width: 100%;
+  text-align: center;
+}
+
+.wrongPage .wrongPage-404 {
+  height: 280px;
+  position: relative;
+  z-index: -1;
+}
+
+.wrongPage .wrongPage-404 h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 230px;
+  margin: 0px;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.wrongPage h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.wrongPage p {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.wrongPage a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #0046d5;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 700;
+  -webkit-box-shadow: 0px 4px 15px -5px #0046d5;
+  box-shadow: 0px 4px 15px -5px #0046d5;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .wrongPage .wrongPage-404 {
+      height: 142px;
+    }
+    .wrongPage .wrongPage-404 h1 {
+      font-size: 112px;
+    }
+}
+
+
+/*
+============================================================================
+  Book a table Page Design
+============================================================================
+*/
+
+#bookATableWrapper .form-control {
+	display: block;
+	width: 100%;
+	height: 38px;
+	padding: 7px 14px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #555;
+	background-color: #efefef;
+	background-image: none;
+	border: 2px solid #dedede;
+	border-radius: 0;
+	box-shadow: none;
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	max-width: 100%;
+}
+
+#bookATableWrapper label {
+	color: #333;
+	font-weight: 600;
+}
+
+#bookATableWrapper .btn.ct_btnTwo {
+	padding: 20px 20px;
+	line-height: 0;
+	font-size: 17px;
+}
+
+
+
+
+
+
